@@ -15,7 +15,7 @@ public class SpringDependencyInjectionApplication {
 		//The following getBean method returns the Controller object since
 		// 		the MyController class is annotated with @Controller to be treated as Bean or Spring Component
 		//         So Spring is creating the controller object FOR US. We did not create it using "new MyController()"
-		MyController myController = (MyController) context.getBean("myController");
+		MyController myController = (MyController) context.getBean("myController"); // Casting required since return type is of "Object" type.
 
 		String greet = myController.sayHello();
 		System.out.println(greet);
