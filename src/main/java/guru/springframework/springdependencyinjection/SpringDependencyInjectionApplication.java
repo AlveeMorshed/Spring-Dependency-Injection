@@ -1,9 +1,6 @@
 package guru.springframework.springdependencyinjection;
 
-import guru.springframework.springdependencyinjection.controllers.ConstructorInjectedController;
-import guru.springframework.springdependencyinjection.controllers.MyController;
-import guru.springframework.springdependencyinjection.controllers.PropertyInjectedController;
-import guru.springframework.springdependencyinjection.controllers.SetterInjectedController;
+import guru.springframework.springdependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +19,11 @@ public class SpringDependencyInjectionApplication {
 
 		System.out.println("--------PRIMARY-------------");
 		System.out.println(myController.sayHello());
+
+		I18nController i18nController = (I18nController) context.getBean("i18nController");
+
+		System.out.println("---------Language Active------");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("---------Property------------");
 
