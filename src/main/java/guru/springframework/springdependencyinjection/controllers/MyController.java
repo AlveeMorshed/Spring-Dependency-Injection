@@ -1,11 +1,18 @@
 package guru.springframework.springdependencyinjection.controllers;
 
+import guru.springframework.springdependencyinjection.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
+
+    private final GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String sayHello(){
-        System.out.println("Hello World!! :D");
-        return "!! Hola peeps !!";
+        return greetingService.sayGreeting();
     }
 }
